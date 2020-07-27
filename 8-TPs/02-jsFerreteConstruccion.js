@@ -9,26 +9,27 @@ debemos mostrar cuantas bolsas se necesitan de cada uno para las medidas que nos
 function Rectangulo() {
     var largo;
     var ancho;
-    var area;
+    var perimetro;
     var cantidadAlambre;
     var cantidadHilos = 3;
     largo = document.getElementById("txtIdLargo").value;
     ancho = document.getElementById("txtIdAncho").value;
-    area = parseInt(largo) * parseInt(ancho);
-    cantidadAlambre = area * cantidadHilos;
+    perimetro = parseInt(largo * 2) + parseInt(ancho * 2);
+    cantidadAlambre = perimetro * cantidadHilos;
     alert(`Usted debe comprar ${cantidadAlambre}ms de alambre`);
 }
 function Circulo() {
     var radio;
-    var area;
+    var perimetro;
     var cantidadAlambre;
     var cantidadHilos = 3;
-
+    //  
+    //  
     radio = document.getElementById("txtIdRadio").value;
-    area = 3.14 * Math.pow(parseInt(radio), 2);
+    perimetro = Math.PI * 2 * radio;
 
-    cantidadAlambre = area * cantidadHilos;
-    alert(`usted debe comprar ${cantidadAlambre}m2 de alambre`);
+    cantidadAlambre = perimetro * cantidadHilos;
+    alert(`usted debe comprar ${cantidadAlambre.toFixed(2)}m2 de alambre`);
 }
 function Materiales() {
     var largo;
@@ -41,8 +42,11 @@ function Materiales() {
     largo = document.getElementById("txtIdLargo").value;
     ancho = document.getElementById("txtIdAncho").value;
 
-    bolsasCementoTotal = parseInt(largo) * bolsaCementoBase
-    bolsasCalTotal = parseInt(ancho) * bolsaCalBase
+    largo = parseInt(largo)
+    ancho = parseInt(ancho)
+
+    bolsasCementoTotal = largo * bolsaCementoBase
+    bolsasCalTotal = ancho * bolsaCalBase
 
     alert(`usted debe comprar ${bolsasCementoTotal} bolsas de cemento y ${bolsasCalTotal} bolsas de cal`)
 
