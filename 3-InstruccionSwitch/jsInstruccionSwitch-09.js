@@ -69,3 +69,16 @@ function mostrar() {
 			break;
 	}
 } //FIN DE LA FUNCIÓN
+
+function Person(n, l) {
+	this.n = n
+	this.k = l
+}
+const member = new Person('hola', 'chau')
+
+Person.getName = function () {
+	return `${this.n} - ${this.l}`
+}
+
+member.getName()
+
