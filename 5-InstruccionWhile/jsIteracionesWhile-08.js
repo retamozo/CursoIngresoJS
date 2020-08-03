@@ -8,14 +8,12 @@ function mostrar() {
 	var numeroIngresado;
 
 	sumaPositivos = 0;
-	multiplicacionNegativos = 1;
-	seguirIngresando = true;
+	multiplicacionNegativos = 1;;
 
-
-	while (seguirIngresando) {
-
-		numeroIngresado = parseInt(prompt("Ingresar número"))
-
+	do {
+		do {
+			numeroIngresado = parseInt(prompt("Ingresar número"))
+		} while (isNaN(numeroIngresado))
 		if (numeroIngresado < 0) {
 			multiplicacionNegativos *= numeroIngresado;
 			document.getElementById('txtIdProducto').value = multiplicacionNegativos;
@@ -25,5 +23,6 @@ function mostrar() {
 			document.getElementById('txtIdSuma').value = sumaPositivos;
 		}
 		seguirIngresando = confirm("desea seguir ingresando valores?")
-	}
+
+	} while (seguirIngresando)
 }
