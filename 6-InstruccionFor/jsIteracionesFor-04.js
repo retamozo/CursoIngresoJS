@@ -1,7 +1,9 @@
-function mostrar()
-{
-	alert("ok");
+function mostrar() {
 
-
-
-}//FIN DE LA FUNCIÓN
+	for (var continuar;;) {
+		continuar = confirm("desea seguir ejecutando el ciclo ?");
+		if (!continuar) {
+			break;
+		}
+	}
+}
